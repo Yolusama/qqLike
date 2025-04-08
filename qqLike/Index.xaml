@@ -1,0 +1,210 @@
+﻿<Window x:Class="qqLike.Index"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        Loaded="MainWindow_OnLoaded" Background="LightGray" AllowsTransparency="True"
+        mc:Ignorable="d" WindowStyle="None" Margin="0" Closing="Index_OnClosed" MouseDown="Index_OnMouseDown"
+        Height="720" Width="1280">
+    <Window.Resources>
+        <Style TargetType="Paragraph">
+            <Setter Property="LineHeight" Value="10" />  <!-- 行高 -->
+            <Setter Property="Margin" Value="0" />      <!-- 移除默认段落间距 -->
+        </Style>
+        <Style x:Key="WinTitle" TargetType="TextBlock">
+            <Setter Property="FontSize" Value="26"></Setter>
+            <Setter Property="FontWeight" Value="Bold"></Setter>
+            <Setter Property="Margin" Value="12 0"></Setter>
+            <Setter Property="Foreground">
+                <Setter.Value>
+                    <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                        <LinearGradientBrush.GradientStops>
+                            <GradientStop Offset="0.0" Color="#90DDDD" />
+                            <GradientStop Offset="1.0" Color="#5BFFFF" />
+                        </LinearGradientBrush.GradientStops>
+                    </LinearGradientBrush>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="HeadIcon" TargetType="Button">
+            <Setter Property="HorizontalAlignment" Value="Stretch"></Setter>
+            <Setter Property="VerticalAlignment" Value="Center"></Setter>
+            <Setter Property="Background" Value="Transparent"></Setter>
+            <Setter Property="Height" Value="40"></Setter>
+            <Setter Property="Margin" Value="0 0 0 5"></Setter>
+            <Setter Property="Visibility" Value="Visible"></Setter>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}">
+                            <ContentPresenter />
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="White"></Setter>
+                                <Setter Property="Cursor" Value="Hand"></Setter>
+                                <Setter Property="Foreground" Value="CornflowerBlue"></Setter>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="Func" TargetType="StackPanel">
+            <Setter Property="Height" Value="20" />
+            <Setter Property="Width" Value="100" />
+            <Setter Property="Background" Value="Transparent" />
+            <Setter Property="HorizontalAlignment" Value="Right" />
+            <Setter Property="VerticalAlignment" Value="Top" />
+        </Style>
+        <Style x:Key="FuncIcon" TargetType="Button">
+            <Setter Property="Background" Value="Transparent"></Setter>
+            <Setter Property="Height" Value="25"></Setter>
+            <Setter Property="Width" Value="25"></Setter>
+            <Setter Property="Margin" Value="0 0 12 0"></Setter>
+            <Setter Property="VerticalAlignment" Value="Center"></Setter>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}">
+                            <ContentPresenter />
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="LightGray"></Setter>
+                                <Setter Property="Cursor" Value="Hand"></Setter>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="90" MinWidth="60" />
+            <ColumnDefinition Width="150" MinWidth="120" MaxWidth="240"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <StackPanel Background="AliceBlue">
+            <TextBlock Text="kc" Style="{StaticResource WinTitle}"
+                       Width="40" HorizontalAlignment="Left">
+            </TextBlock>
+            <Button Style="{StaticResource HeadIcon}">
+                <materialDesign:PackIcon Kind="MessageProcessingOutline" Width="25" Height="25"
+                                         HorizontalAlignment="Center"
+                                         VerticalAlignment="Center" />
+            </Button>
+            <Button Style="{StaticResource HeadIcon}">
+                <materialDesign:PackIcon Kind="AccountOutline" Width="25" Height="25" HorizontalAlignment="Center"
+                                         VerticalAlignment="Center" />
+            </Button>
+            <Button Style="{StaticResource HeadIcon}">
+                <materialDesign:PackIcon Kind="CogOutline" Width="25" Height="25" HorizontalAlignment="Center"
+                                         VerticalAlignment="Center" />
+            </Button>
+        </StackPanel>
+        <ScrollViewer Grid.Column="1" VerticalScrollBarVisibility="Auto" Background="Azure">
+            <Button VerticalAlignment="Top" Height="60" Background="Transparent"
+                    Command="{Binding UserInfoCardCommand}">
+                <Button.Template>
+                    <ControlTemplate>
+                        <StackPanel Orientation="Horizontal" Height="60" VerticalAlignment="Top" Background="White">
+                            <Ellipse Width="60" Height="60" VerticalAlignment="Top">
+                                <Ellipse.Fill>
+                                    <VisualBrush>
+                                        <VisualBrush.Visual>
+                                            <Image Source="../Resource/default.png"
+                                                   Stretch="UniformToFill" Width="60" Height="60" />
+                                        </VisualBrush.Visual>
+                                    </VisualBrush>
+                                </Ellipse.Fill>
+                            </Ellipse>
+                            <StackPanel Margin="2 0 0 0" VerticalAlignment="Top">
+                                <TextBlock Text="yolu" Height="30" VerticalAlignment="Center" FontSize="16"
+                                           Foreground="Black">
+                                </TextBlock>
+                                <TextBlock Text="12" Height="30" VerticalAlignment="Center" FontSize="16"
+                                           Foreground="Black">
+                                </TextBlock>
+                            </StackPanel>
+                        </StackPanel>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+        </ScrollViewer>
+        <StackPanel Grid.Column="2" Style="{StaticResource Func}" Orientation="Horizontal" Margin="0 6 0 0">
+            <Button Style="{StaticResource FuncIcon}" Click="MinimizeWindow">
+                <Image Source="../Resource/Minimize.png" Stretch="UniformToFill"></Image>
+            </Button>
+            <Button Style="{StaticResource FuncIcon}" Click="ExpandOrRestore">
+                <Image Source="../Resource/Expand.png" x:Name="expandIcon" Stretch="UniformToFill"></Image>
+            </Button>
+            <Button Style="{StaticResource FuncIcon}" Click="CloseWindow">
+                <Image Source="../Resource/Close.png" Stretch="UniformToFill"></Image>
+            </Button>
+        </StackPanel>
+        <Border Grid.Column="2" x:Name="userInfoCard" CornerRadius="8" BorderBrush="White" Width="400" Height="300"
+                BorderThickness="2">
+            <StackPanel VerticalAlignment="Center">
+                <Image Source="../Resource/default.png" Height="120" Width="120"></Image>
+                <StackPanel Orientation="Horizontal" Height="30" HorizontalAlignment="Center">
+                    <Label Content="昵称 " Foreground="White" VerticalAlignment="Center" FontSize="16"></Label>
+                    <Label Content="Yolu" Foreground="White" VerticalAlignment="Center" FontSize="16"></Label>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Height="30" HorizontalAlignment="Center">
+                    <Label Content="签名 " Foreground="White" VerticalAlignment="Center" FontSize="16"></Label>
+                    <Label Content="你好，世界！" Foreground="White" VerticalAlignment="Center" FontSize="16"></Label>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Height="30" HorizontalAlignment="Center" Margin="0 0 0 10">
+                    <Label Content="邮箱 " Foreground="White" VerticalAlignment="Center" FontSize="16"></Label>
+                    <Label Content="1231234@qq.com" Foreground="White" VerticalAlignment="Center" FontSize="16"></Label>
+                </StackPanel>
+                <Button HorizontalAlignment="Center" Command="{Binding ChatUICommand}">
+                    <Button.Template>
+                        <ControlTemplate>
+                            <materialDesign:PackIcon Kind="MessageTextOutline" Width="30" Height="30" />
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+            </StackPanel>
+        </Border>
+
+        <StackPanel Grid.Column="2" x:Name="chatUI">
+            <TextBox
+                Height="500"
+                VerticalAlignment="Top"
+                AcceptsReturn="True"
+                IsEnabled="{Binding Path=IsChecked, ElementName=MaterialDesignOutlinedTextBoxEnabledComboBox}"
+                Style="{StaticResource MaterialDesignOutlinedTextBox}"
+                TextWrapping="Wrap"
+                VerticalScrollBarVisibility="Auto"
+                Margin="0 32"
+                Background="White"
+                x:Name="chatContent" />
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0 0 0 10">
+                <Label x:Name="selfPort" VerticalAlignment="Center"></Label>
+                <Label Content="目标端口" VerticalAlignment="Center"></Label>
+                <TextBox Width="60" Margin="12 0 " x:Name="contactPort"></TextBox>
+                <Button
+                    Width="120"
+                    Content="发送文件"
+                    Command="{Binding SendFileCommand}" />
+                <Button Content="发送" Width="80" Margin="12 0 12 0" VerticalAlignment="Bottom"
+                        Command="{Binding SendMessageCommand}">
+                </Button>
+            </StackPanel>
+            <TextBox
+                Height="100"
+                VerticalAlignment="Top"
+                materialDesign:TextFieldAssist.CharacterCounterVisibility="{Binding Path=IsChecked, ElementName=MaterialDesignOutlinedPasswordFieldTextCountComboBox, Converter={x:Static materialDesign:BooleanToVisibilityConverter.CollapsedInstance}}"
+                MaxLength="40"
+                Style="{StaticResource MaterialDesignOutlinedTextBox}"
+                TextWrapping="Wrap"
+                VerticalScrollBarVisibility="Auto"
+                Text="{Binding Path=Content}" />
+        </StackPanel>
+    </Grid>
+</Window>

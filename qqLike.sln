@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "qqLike", "qqLike\qqLike.csproj", "{B9592AAB-04E1-4878-8322-CAF57701EBAB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SocketSever", "SocketSever\SocketSever.csproj", "{A243D508-878D-47B6-9D13-14B1E3E22EEC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B9592AAB-04E1-4878-8322-CAF57701EBAB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B9592AAB-04E1-4878-8322-CAF57701EBAB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B9592AAB-04E1-4878-8322-CAF57701EBAB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B9592AAB-04E1-4878-8322-CAF57701EBAB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A243D508-878D-47B6-9D13-14B1E3E22EEC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A243D508-878D-47B6-9D13-14B1E3E22EEC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A243D508-878D-47B6-9D13-14B1E3E22EEC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A243D508-878D-47B6-9D13-14B1E3E22EEC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

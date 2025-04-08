@@ -1,0 +1,42 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <OutputType>WinExe</OutputType>
+        <TargetFramework>net6.0-windows</TargetFramework>
+        <Nullable>enable</Nullable>
+        <UseWPF>true</UseWPF>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="MaterialDesignColors" Version="5.2.2-ci942" />
+      <PackageReference Include="MaterialDesignThemes" Version="5.2.2-ci942" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="Resource\" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Remove="Resource\Restore.png" />
+      <Resource Include="Resource\Restore.png">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="Resource\Close.png" />
+      <Resource Include="Resource\Close.png">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="Resource\Expand.png" />
+      <Resource Include="Resource\Expand.png">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="Resource\Minimize.png" />
+      <Resource Include="Resource\Minimize.png">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="Resource\default.png" />
+      <Resource Include="Resource\default.png">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+    </ItemGroup>
+
+</Project>
